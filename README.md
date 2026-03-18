@@ -255,17 +255,5 @@ The chatbot will open at `http://localhost:8501`.
 - **Single document focus**: Currently optimized for single-document Q&A
 - **Language**: English-only support
 
----
-
-## 📄 License
-
-This project was created as part of the Amlgo Labs Junior AI Engineer assessment.
-
----
-
-## 🙏 Acknowledgments
-
-- [Groq](https://groq.com/) — Ultra-fast LLM inference
-- [Sentence Transformers](https://www.sbert.net/) — Embedding models
-- [ChromaDB](https://www.trychroma.com/) — Vector database
-- [Streamlit](https://streamlit.io/) — Web application framework
+## Demo Video
+- https://drive.google.com/file/d/1iJ_tUId9sfq5NNE_CV4kYlERwCsV6JSE/view?usp=sharing
