@@ -70,11 +70,25 @@ class Generator:
         self.temperature = temperature
         self.max_tokens = max_tokens
 
-        api_key = api_key or os.getenv("GROQ_API_KEY")
+        # Try to get API key from parameter, then environment variable
+        if not api_key:
+            api_key = os.getenv("GROQ_API_KEY")
+            
+        # Try to get API key from Streamlit secrets as fallback
+        if not api_key:
+            try:
+                import streamlit as st
+                if "GROQ_API_KEY" in st.secrets:
+                    api_key = st.secrets["GROQ_API_KEY"]
+            except ImportError:
+                pass
+            except Exception:
+                pass # Streamlit not running or secrets not configured
+                
         if not api_key:
             raise ValueError(
-                "Groq API key not found. Set GROQ_API_KEY in .env file "
-                "or pass api_key parameter."
+                "Groq API key not found. Set GROQ_API_KEY in .env file, "
+                "Streamlit secrets, or pass api_key parameter."
             )
 
         self.client = Groq(api_key=api_key)
