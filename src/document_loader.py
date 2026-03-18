@@ -3,6 +3,7 @@ Document Loader Module
 Handles loading and cleaning of documents in various formats (PDF, TXT, DOCX).
 Removes headers, footers, HTML artifacts, and normalizes whitespace.
 """
+#update
 
 import os
 import re
